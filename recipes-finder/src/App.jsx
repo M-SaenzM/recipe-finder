@@ -1,12 +1,12 @@
 import './styles/App.css'
 import './components/searchBar'
-import SearchBar from './components/searchBar'
+import SearchPage from './pages/searchPage'
 
 function App() {
 
   return (
     <>
-      <SearchBar/>
+      <SearchPage/>
     </>
   )
 }
