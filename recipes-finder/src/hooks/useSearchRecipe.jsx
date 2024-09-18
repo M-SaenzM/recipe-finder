@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { fetchRecipes } from '../api/getRecipesAPI';
 
-const useSearchRecipe = (query) => {
+const useSearchRecipe = (query,page) => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [totalResults, setTotalResults] = useState(0);
 
   useEffect(() => {
     const getRecipes = async () => {
       setLoading(true);
       try {
-        const result = await fetchRecipes(query);
-        setRecipes(result);
+        const data = await fetchRecipes(query,page);
+        setRecipes(data.results);
+        setTotalResults(data.totalResults)
       } catch (err) {
         setError(err);
       }
@@ -21,9 +23,9 @@ const useSearchRecipe = (query) => {
     if (query) {
       getRecipes();
     }
-  }, [query]);
+  }, [query,page]);
 
-  return { recipes, loading, error };
+  return { recipes, totalResults, loading, error };
 };
 
 export default useSearchRecipe;
