@@ -5,15 +5,19 @@ import '../styles/searchBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBar = () => {
+const SearchBar = ({onSearch}) => {
     const [searchValue, setSearchValue] = useState('');
     
     const handleInputChange = (e) => {
         setSearchValue(e.target.value);
     }
     const handleSubmit = () => {
-        alert(`value: ${searchValue}`);
+        //alert(`value: ${searchValue}`);
+       
         
+        if (searchValue) {
+          onSearch(searchValue);
+        }
     }
 
     const handleEnterKey = (e) => {
