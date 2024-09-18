@@ -12,7 +12,12 @@ const SearchPage = () => {
     
 
     const totalPages = Math.ceil(totalResults / 5);
+    const getPageNumbers = () => {
+        const startPage = Math.max(1, currentPage - Math.floor(10 / 2));
+        const endPage = Math.min(totalPages, startPage + 10 - 1);
     
+        return Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index);
+      };
     const handleSearch = (query) => {
       setSearchQuery(query);
     };
@@ -35,7 +40,7 @@ const SearchPage = () => {
       <RecipeResults recipes={recipes} />
       <Pagination 
        currentPage={currentPage}
-       totalPages={totalPages} 
+       totalPages={getPageNumbers} 
        handleNextPage={handleNextPage} 
        handlePrevPage={handlePrevPage} 
        handlePageClick={handlePageClick}/>

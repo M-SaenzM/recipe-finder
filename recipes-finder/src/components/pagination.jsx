@@ -1,25 +1,28 @@
 import React from "react";
+import '../styles/pagination.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons';
 
 const Pagination = ({totalPages,handleNextPage,handlePrevPage,handlePageClick,currentPage}) => {
     return (
         <>
-        <div>
+        <div className="pagination">
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
-          Previous
+            <FontAwesomeIcon icon={faStepBackward} style={{ color: currentPage === 1 ? 'lightgray' : 'black', fontSize: '16px' }}/>
         </button>
-
-        {[...Array(totalPages)].map((_, index) => (
+         {totalPages().map((pageNumber) => (
           <button
-            key={index}
-            onClick={() => handlePageClick(index + 1)}
-            className={currentPage === index + 1 ? 'active' : ''}
+            key={pageNumber}
+            onClick={() => handlePageClick(pageNumber)}
+            className={currentPage === pageNumber ? 'active' : ''}
           >
-            {index + 1}
+            {pageNumber}
           </button>
         ))}
 
         <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next
+        <FontAwesomeIcon icon={faStepForward} style={{ color: currentPage === totalPages ? 'lightgray' : 'black', fontSize: '16px' }}/>
         </button>
       </div>
         </>
