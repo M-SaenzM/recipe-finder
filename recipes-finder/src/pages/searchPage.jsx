@@ -6,12 +6,14 @@ import Pagination from "../components/pagination";
 import Header from "../components/header";
 import Select from "react-select";
 
+
 import { ColorRing, MagnifyingGlass } from "react-loader-spinner";
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [cuisine, setCuisine] = useState("");
+  
   const { recipes, totalResults, loading, error } = useSearchRecipe(
     searchQuery,
     currentPage,
@@ -113,7 +115,7 @@ const SearchPage = () => {
           )}
           {error && <p>Error loading recipes!</p>}
           {(!recipes || totalResults === 0) && <p>No Recipes Found!</p>}
-          {recipes && <RecipeResults recipes={recipes} />}
+          {recipes && <RecipeResults  recipes={recipes} />}
         </div>
         {totalResults > 0 && (
           <Pagination
