@@ -7,6 +7,7 @@ import { faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons
 const Pagination = ({totalPages,handleNextPage,handlePrevPage,handlePageClick,currentPage}) => {
     return (
         <>
+        
         <div className="pagination">
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
             <FontAwesomeIcon icon={faStepBackward} style={{ color: currentPage === 1 ? 'lightgray' : 'black', fontSize: '16px' }}/>

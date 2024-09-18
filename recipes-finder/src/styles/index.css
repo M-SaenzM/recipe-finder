@@ -9,14 +9,40 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  
+  /* background-color: #F2EAD3; */
+ /*  background-color: #FFF2D8; */
   background-image: url('../assets/food-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  
 }
 
+.bg-filter{
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  /* background-color: rgba(253, 253, 253, 0.865);  */
+  background-color: #0000006e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.response-block{
+  /* background-color: #00000017; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+  max-height: 55vh;
+}
 /* ***** Scroll Style *****/
 /* width */
 ::-webkit-scrollbar {
