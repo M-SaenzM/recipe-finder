@@ -54,6 +54,7 @@ const SearchPage = () => {
   };
 
   const cuisineOption = [
+    {value: "", label: "---"},
     { value: "african", label: "African" },
     { value: "asian", label: "Asian" },
     { value: "american", label: "American" },
