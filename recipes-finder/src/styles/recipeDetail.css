@@ -26,17 +26,7 @@
     border-radius: 10px;
     margin-right: 10%;
 }
-@media only screen and (max-width: 600px) {
-    .recipe-info {
-        flex-direction: column;
-        justify-items: center;
-        width: 80%;
-    }
 
-    .recipe-info img {
-        margin-right: 0;
-    }
-  }
 .recipe-info h1 {
     color: #113946;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -75,3 +65,31 @@
     color: #113946;
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 1023px) {
+    .recipe-info {
+        flex-direction: column;
+        justify-items: center;
+        width: 80%;
+        text-align: center;
+    }
+
+    .recipe-info img {
+        margin-right: 0;
+        height: 20vh;
+    }
+    .health-allergy-data {
+        flex-direction: column;
+        
+    }
+    
+
+    .health-allergy-data div {
+        width: 100%;
+        justify-content: left;
+    }
+    .section-info h2 {
+        text-align: center;
+
+    }
+  }

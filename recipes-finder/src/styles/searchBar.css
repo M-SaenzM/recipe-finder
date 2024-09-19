@@ -23,3 +23,10 @@
 .search-input input:focus {
     outline: none;
 }
+
+@media only screen and (max-width: 1023px) {
+    .search-input {
+        width: 80vw;
+    }
+}
+

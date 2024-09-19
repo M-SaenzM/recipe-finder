@@ -19,6 +19,8 @@ body {
   
 }
 
+
+
 .bg-filter{
   
   position: absolute;
@@ -62,4 +64,12 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #fceffe; 
+}
+
+@media only screen and (max-width: 1023px) {
+  body{
+    background-image: url('../assets/food-bg-sm.jpg');
+    
+  }
+
 }
