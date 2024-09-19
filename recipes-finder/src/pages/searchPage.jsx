@@ -7,7 +7,7 @@ import Header from "../components/header";
 import Select from "react-select";
 
 
-import { ColorRing, MagnifyingGlass } from "react-loader-spinner";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -97,7 +97,7 @@ const SearchPage = () => {
             onChange={handleCuisineChange} 
         />    
         </div>
-       
+       <br/>
         <div className="response-block">
           {loading ? (
             <MagnifyingGlass
@@ -114,8 +114,10 @@ const SearchPage = () => {
             ""
           )}
           {error && <p>Error loading recipes!</p>}
-          {(!recipes || totalResults === 0) && <p>No Recipes Found!</p>}
-          {recipes && <RecipeResults  recipes={recipes} />}
+          {console.log(!recipes && totalResults === 0)
+          }
+          {(totalResults === 0) && <p>No Recipes Found!</p>}
+          {recipes && <RecipeResults  recipes={recipes} />} 
         </div>
         {totalResults > 0 && (
           <Pagination
